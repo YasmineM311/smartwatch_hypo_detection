@@ -1,15 +1,10 @@
 # imports...
-
 import pandas as pd
 import numpy as np
-from datetime import datetime
 from datetime import timedelta
 
 
-'''
-This file contains all functions required for feature engineering and imputation.
-'''
-
+# Define feature engineering/imputation functions
 
 def hr_rolling_features(df):
 
