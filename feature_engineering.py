@@ -166,7 +166,7 @@ def glucose_features(df):
     df['hypo_duration_15more'] = np.where(df['cgm'].isna(), np.NaN, df['hypo_duration_15more']) # making sure NaNs remain NaNs
     df['hypoglycemia'] = df['hypo_duration_15more']
 
-    # creating a column for prehypoglycemia phase to evaluate percentage of false positives lying in this period (***dropped before modeling***)
+    # creating a column for prehypoglycemia phase to evaluate percentage of false positives lying in this period 
     df['hypo_shift'] = df['hypo_duration_15more'].shift(-1)
     df['hypo_start'] = np.where((df['hypo_duration_15more'] == 0) & (df['hypo_shift'] == 1), 1, np.NaN)
     df['hypo_end'] = np.where((df['hypo_duration_15more'] == 1) & (df['hypo_shift'] == 0), 1, np.NaN)
